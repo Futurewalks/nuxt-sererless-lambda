@@ -4,18 +4,22 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project with Serverless' }
-    ]
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Nuxt.js project with Serverless',
+      },
+    ],
   },
   build: {
-    vendor: ['axios']
+    vendor: ['axios'],
   },
   srcDir: 'src/',
   performance: {
-    gzip: false
+    gzip: false,
   },
   router: {
-    base: '/dev/'
+    base: '/',
   },
-  dev: false
+  dev: false,
 }

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 const awsServerlessExpress = require('aws-serverless-express')
 const app = require('./server')
 
@@ -19,8 +19,9 @@ const binaryMimeTypes = [
   'text/javascript',
   'text/plain',
   'text/text',
-  'text/xml'
+  'text/xml',
 ]
 const server = awsServerlessExpress.createServer(app, null, binaryMimeTypes)
 
-module.exports.nuxt = (event, context) => awsServerlessExpress.proxy(server, event, context)
+module.exports.nuxt = (event, context) =>
+  awsServerlessExpress.proxy(server, event, context)

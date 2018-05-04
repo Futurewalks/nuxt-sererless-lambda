@@ -3,18 +3,21 @@ service: nuxt-serverless # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
-  region: us-east-1
+  region: ap-northeast-2
+  profile: 'your profile name' #ENV setup name
 
 functions:
   nuxt:
     handler: handler.nuxt
     events:
-      - http: ANY {proxy+}
+      - http:
+          path: /
+          method: any
+          cors: true
 
 plugins:
   - serverless-apigw-binary
- 
+
 custom:
   apigwBinary:
     types:
